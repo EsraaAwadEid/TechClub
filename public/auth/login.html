@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechClub | Login</title>
+  <link rel="shortcut icon" href="../build/images/tap_logo.png" type="">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../build/css/tailwind.css" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+  <div x-data="setup()" x-init="$refs.loading.classList.add('hidden'); setColors(color);" :class="{ 'dark': isDark}">
+    <!-- Loading screen -->
+    <div x-ref="loading"
+      class="fixed inset-0 z-50 flex items-center justify-center text-2xl font-semibold text-white bg-primary-darker">
+      Loading.....
+    </div>
+    <div
+      class="flex flex-col items-center justify-center min-h-screen p-4 space-y-4 antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light">
+      <a href="../../index.html">
+      <img class="w-20" src="../build/images/tap_logo.png " alt="">
+      <svg class="w-48 h-6" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1407.86 223.38">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #00ddd7;
+            }
+
+            .cls-1,
+            .cls-2 {
+              stroke-width: 0px;
+            }
+
+            .cls-2 {
+              fill: #013ea0;
+            }
+          </style>
+        </defs>
+        <g id="Layer_1-2">
+          <path class="cls-2"
+            d="m903.13,223.38c-1.43-1.01-3-1.86-4.25-3.05-10.74-10.23-21.43-20.51-32.12-30.8-.51-.49-.85-1.16-1.28-1.74-.28-.02-.57-.05-.85-.07-.37.63-.65,1.34-1.14,1.86-4.66,4.9-9.34,9.78-14.03,14.64-4.13,4.28-8.96,3.25-10.95-2.34-11.3-31.72-22.6-63.44-33.9-95.17-.37-1.05-.77-2.09-1.13-3.15-.8-2.38-.47-4.56,1.33-6.37,1.73-1.74,3.85-2.13,6.18-1.42,6.26,1.93,12.51,3.87,18.77,5.82,26.89,8.36,53.79,16.72,80.68,25.08,5.94,1.85,7.15,6.55,2.85,11.05-4.67,4.88-9.36,9.75-14.04,14.63-.45.47-.87.96-1.66,1.83.68.46,1.35.78,1.87,1.27,10.72,10.26,21.43,20.51,32.09,30.83,1.24,1.2,2.15,2.74,3.21,4.13l.06,2.76c-1.07,1.46-1.99,3.05-3.22,4.35-7.12,7.51-14.28,14.98-21.49,22.4-1.25,1.28-2.8,2.27-4.21,3.4l-2.76.06Z" />
+          <path class="cls-2"
+            d="m903.13,223.38c-1.43-1.01-3-1.86-4.25-3.05-10.74-10.23-21.43-20.51-32.12-30.8-.51-.49-.85-1.16-1.28-1.74-.28-.02-.57-.05-.85-.07-.37.63-.65,1.34-1.14,1.86-4.66,4.9-9.34,9.78-14.03,14.64-4.13,4.28-8.96,3.25-10.95-2.34-11.3-31.72-22.6-63.44-33.9-95.17-.37-1.05-.77-2.09-1.13-3.15-.8-2.38-.47-4.56,1.33-6.37,1.73-1.74,3.85-2.13,6.18-1.42,6.26,1.93,12.51,3.87,18.77,5.82,26.89,8.36,53.79,16.72,80.68,25.08,5.94,1.85,7.15,6.55,2.85,11.05-4.67,4.88-9.36,9.75-14.04,14.63-.45.47-.87.96-1.66,1.83.68.46,1.35.78,1.87,1.27,10.72,10.26,21.43,20.51,32.09,30.83,1.24,1.2,2.15,2.74,3.21,4.13l.06,2.76c-1.07,1.46-1.99,3.05-3.22,4.35-7.12,7.51-14.28,14.98-21.49,22.4-1.25,1.28-2.8,2.27-4.21,3.4l-2.76.06Z" />
+          <path class="cls-2"
+            d="m903.13,223.38c-1.43-1.01-3-1.86-4.25-3.05-10.74-10.23-21.43-20.51-32.12-30.8-.51-.49-.85-1.16-1.28-1.74-.28-.02-.57-.05-.85-.07-.37.63-.65,1.34-1.14,1.86-4.66,4.9-9.34,9.78-14.03,14.64-4.13,4.28-8.96,3.25-10.95-2.34-11.3-31.72-22.6-63.44-33.9-95.17-.37-1.05-.77-2.09-1.13-3.15-.8-2.38-.47-4.56,1.33-6.37,1.73-1.74,3.85-2.13,6.18-1.42,6.26,1.93,12.51,3.87,18.77,5.82,26.89,8.36,53.79,16.72,80.68,25.08,5.94,1.85,7.15,6.55,2.85,11.05-4.67,4.88-9.36,9.75-14.04,14.63-.45.47-.87.96-1.66,1.83.68.46,1.35.78,1.87,1.27,10.72,10.26,21.43,20.51,32.09,30.83,1.24,1.2,2.15,2.74,3.21,4.13l.06,2.76c-1.07,1.46-1.99,3.05-3.22,4.35-7.12,7.51-14.28,14.98-21.49,22.4-1.25,1.28-2.8,2.27-4.21,3.4l-2.76.06Z" />
+          <path class="cls-1"
+            d="m772.96,0c5.34.44,8.02,3.59,9.72,8.52,5.11,14.86,10.6,29.59,15.87,44.39,2.17,6.07-1.81,11.93-7.91,11.73-3.61-.12-6.37-1.88-7.6-5.25-5.85-15.99-11.6-32.01-17.32-48.04-1.41-3.94.44-7.02,3.01-9.81,1.41-.51,2.82-1.01,4.23-1.52Z" />
+          <path class="cls-1"
+            d="m704.11,138.82c.46-5.33,3.58-8.02,8.52-9.72,14.86-5.11,29.59-10.59,44.39-15.87,6.07-2.16,11.93,1.8,11.72,7.91-.12,3.74-2.02,6.45-5.5,7.72-15.82,5.76-31.67,11.44-47.52,17.13-4.05,1.46-7.21-.27-10.09-2.93l-1.52-4.23Z" />
+          <path class="cls-1"
+            d="m770.44,79.05c1.8,6.47-3.17,12.51-9.54,11.52-.73-.11-1.48-.29-2.15-.61-15.34-7.19-30.69-14.36-45.98-21.66-4.24-2.03-5.82-6.88-3.98-10.97,1.88-4.19,6.74-6.22,11.1-4.2,15.37,7.11,30.7,14.33,45.97,21.68,1.79.86,3.07,2.8,4.58,4.24Z" />
+          <path class="cls-1"
+            d="m769.03,202.81c-4.69,1.47-7.7.91-10.12-1.63-2.57-2.69-3.16-5.93-1.65-9.34,2.05-4.62,4.27-9.16,6.42-13.74,4.9-10.42,9.83-20.82,14.69-31.26,1.56-3.35,4.02-5.41,7.73-5.63,6.17-.37,10.44,5.94,7.95,11.87-1.81,4.31-3.93,8.49-5.92,12.73-5.02,10.67-9.96,21.38-15.15,31.97-1.08,2.21-3.09,3.96-3.94,5.02Z" />
+          <path class="cls-1"
+            d="m859.57,9.66c-.37,2.23-.27,4.68-1.19,6.66-6.92,15.05-14,30.03-21.11,44.99-2.21,4.65-7.23,6.42-11.52,4.3-4.18-2.06-5.83-6.95-3.69-11.52,7.01-15.01,14.08-29.99,21.16-44.97,1.63-3.46,4.43-5.26,8.29-5.13,3.39.11,6.22,2.31,8.06,5.68Z" />
+          <path class="cls-2" d="m147.54,4.46v40.38h-48.66v142.11h-50.73V44.84H0V4.46h147.54Z" />
+          <path class="cls-2"
+            d="m217.17,45.1v29.77h58.24v38.57h-58.24v32.87h66.01v40.64h-116.74V4.46h116.74v40.64h-66.01Z" />
+          <path class="cls-2"
+            d="m313.33,47.3c7.51-14.06,18.16-25.02,31.97-32.87,13.8-7.85,29.68-11.78,47.63-11.78,22.78,0,41.93,6.08,57.46,18.25,15.53,12.17,25.54,28.69,30.03,49.57h-54.62c-3.28-6.9-7.81-12.17-13.59-15.79-5.78-3.62-12.47-5.44-20.06-5.44-11.74,0-21.1,4.19-28.08,12.55-6.99,8.37-10.48,19.54-10.48,33.52s3.49,25.41,10.48,33.78c6.99,8.37,16.35,12.55,28.08,12.55,7.59,0,14.28-1.81,20.06-5.44,5.78-3.62,10.31-8.89,13.59-15.79h54.62c-4.49,20.88-14.49,37.4-30.03,49.57-15.53,12.17-34.69,18.25-57.46,18.25-17.95,0-33.82-3.92-47.63-11.78-13.81-7.85-24.46-18.81-31.97-32.87-7.51-14.06-11.26-30.16-11.26-48.27s3.75-33.95,11.26-48.02Z" />
+          <path class="cls-2"
+            d="m667.82,4.46v182.49h-50.73v-73.25h-61.86v73.25h-50.73V4.46h50.73v68.59h61.86V4.46h50.73Z" />
+          <path class="cls-2" d="m995.78,148.12h56.69v38.83h-107.42V4.46h50.73v143.66Z" />
+          <path class="cls-2"
+            d="m1121.84,4.46v105.87c0,9.84,2.29,17.43,6.86,22.78,4.57,5.35,11.52,8.02,20.84,8.02s16.35-2.72,21.1-8.15c4.74-5.44,7.12-12.98,7.12-22.65V4.46h50.73v105.87c0,16.74-3.54,31.02-10.61,42.84-7.08,11.82-16.7,20.71-28.86,26.66-12.17,5.95-25.67,8.93-40.51,8.93s-28.08-2.98-39.73-8.93c-11.65-5.95-20.8-14.79-27.44-26.53-6.65-11.73-9.97-26.05-9.97-42.97V4.46h50.47Z" />
+          <path class="cls-2"
+            d="m1398.41,109.16c6.3,8.2,9.45,17.56,9.45,28.08,0,15.53-5.35,27.7-16.05,36.5-10.7,8.8-25.71,13.2-45.04,13.2h-90.34V4.46h87.49c18.64,0,33.26,4.14,43.87,12.42,10.61,8.28,15.92,19.93,15.92,34.94,0,10.7-2.81,19.63-8.41,26.79-5.61,7.16-13.07,12.04-22.39,14.63,10.7,2.42,19.2,7.72,25.5,15.92Zm-91.24-32.23h25.63c12.77,0,19.16-5.26,19.16-15.79s-6.39-16.31-19.16-16.31h-25.63v32.1Zm48.66,53.06c0-5.52-1.68-9.75-5.05-12.68-3.36-2.93-8.15-4.4-14.37-4.4h-29.25v33.13h29.51c12.77,0,19.16-5.35,19.16-16.05Z" />
+        </g>
+      </svg>
+      </a>
+      <main>
+        <div class="w-full max-w-sm px-4 py-6 space-y-6 bg-white rounded-md dark:bg-darker">
+          <h1 class="text-xl font-semibold text-center">Login</h1>
+          <form action="#" class="space-y-6">
+            <input
+              class="w-full px-4 py-2 border rounded-md dark:bg-darker dark:border-gray-700 focus:outline-none focus:ring focus:ring-primary-100 dark:focus:ring-primary-darker"
+              type="email" name="email" placeholder="Email address" required />
+            <input
+              class="w-full px-4 py-2 border rounded-md dark:bg-darker dark:border-gray-700 focus:outline-none focus:ring focus:ring-primary-100 dark:focus:ring-primary-darker"
+              type="password" name="password" placeholder="Password"  required/>
+            <div class="flex items-center justify-between">
+              <!-- Remember me toggle -->
+              <label class="flex items-center">
+                <div class="relative inline-flex items-center">
+                  <input type="checkbox" name="remembr_me"
+                    class="w-10 h-4 transition bg-gray-200 border-none rounded-full shadow-inner outline-none appearance-none toggle checked:bg-primary-light disabled:bg-gray-200 focus:outline-none" />
+                  <span
+                    class="absolute top-0 left-0 w-4 h-4 transition-all transform scale-150 bg-white rounded-full shadow-sm"></span>
+                </div>
+                <span class="ml-3 text-sm font-normal text-gray-500 dark:text-gray-400">Remember me</span>
+              </label>
+
+              <a href="forgot-password.html" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+            </div>
+            <div>
+              <button 
+                class="w-full px-4 py-2 font-medium text-center text-white transition-colors duration-200 rounded-md bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 dark:focus:ring-offset-darker">
+                            <a href="../index.html">
+  Login</a>
+              </button>
+            </div>
+          </form>
+
+
+          <!-- Social login links -->
+          <!-- Brand icons src https://boxicons.com -->
+          
+            <svg aria-hidden="true" class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.026,2c-5.509,0-9.974,4.465-9.974,9.974c0,4.406,2.857,8.145,6.821,9.465 c0.499,0.09,0.679-0.217,0.679-0.481c0-0.237-0.008-0.865-0.011-1.696c-2.775,0.602-3.361-1.338-3.361-1.338 c-0.452-1.152-1.107-1.459-1.107-1.459c-0.905-0.619,0.069-0.605,0.069-0.605c1.002,0.07,1.527,1.028,1.527,1.028 c0.89,1.524,2.336,1.084,2.902,0.829c0.091-0.645,0.351-1.085,0.635-1.334c-2.214-0.251-4.542-1.107-4.542-4.93 c0-1.087,0.389-1.979,1.024-2.675c-0.101-0.253-0.446-1.268,0.099-2.64c0,0,0.837-0.269,2.742,1.021 c0.798-0.221,1.649-0.332,2.496-0.336c0.849,0.004,1.701,0.115,2.496,0.336c1.906-1.291,2.742-1.021,2.742-1.021 c0.545,1.372,0.203,2.387,0.099,2.64c0.64,0.696,1.024,1.587,1.024,2.675c0,3.833-2.33,4.675-4.552,4.922 c0.355,0.308,0.675,0.916,0.675,1.846c0,1.334-0.012,2.41-0.012,2.737c0,0.267,0.178,0.577,0.687,0.479 C19.146,20.115,22,16.379,22,11.974C22,6.465,17.535,2,12.026,2z">
+              </path>
+            </svg>
+            
+          </a>
+
+          <!-- Register link -->
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Don't have an account yet? <a href="register.html" class="text-blue-600 hover:underline">Sign up</a>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- Toggle dark mode button -->
+    <div class="fixed bottom-5 left-5">
+      <button aria-hidden="true" @click="toggleTheme"
+        class="p-2 transition-colors duration-200 rounded-full shadow-md bg-primary hover:bg-primary-darker focus:outline-none focus:ring focus:ring-primary">
+        <svg x-show="isDark" class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+        </svg>
+        <svg x-show="!isDark" class="w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const setup = () => {
+      const getTheme = () => {
+        if (window.localStorage.getItem('dark')) {
+          return JSON.parse(window.localStorage.getItem('dark'))
+        }
+        return !!window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      }
+
+      const setTheme = (value) => {
+        window.localStorage.setItem('dark', value)
+      }
+
+      const getColor = () => {
+        if (window.localStorage.getItem('color')) {
+          return window.localStorage.getItem('color')
+        }
+        return 'cyan'
+      }
+
+      const setColors = (color) => {
+        const root = document.documentElement
+        root.style.setProperty('--color-primary', `var(--color-${color})`)
+        root.style.setProperty('--color-primary-50', `var(--color-${color}-50)`)
+        root.style.setProperty('--color-primary-100', `var(--color-${color}-100)`)
+        root.style.setProperty('--color-primary-light', `var(--color-${color}-light)`)
+        root.style.setProperty('--color-primary-lighter', `var(--color-${color}-lighter)`)
+        root.style.setProperty('--color-primary-dark', `var(--color-${color}-dark)`)
+        root.style.setProperty('--color-primary-darker', `var(--color-${color}-darker)`)
+        this.selectedColor = color
+        window.localStorage.setItem('color', color)
+      }
+
+      return {
+        loading: true,
+        isDark: getTheme(),
+        color: getColor(),
+        toggleTheme() {
+          this.isDark = !this.isDark
+          setTheme(this.isDark)
+        },
+        setColors,
+      }
+    }
+  </script>
+</body>
+
+</html>
