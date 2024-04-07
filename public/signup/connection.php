@@ -1,16 +1,16 @@
 <?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'techclub_db';
 
-	 $host = "sql212.infinityfree.com";
-	 $username = "if0_35679654";
-	 $password = "ZD45o4bHwfXNl";
-	 $db_name = "if0_35679654_cspsyco";
-		
-	 $conn=new mysqli($host,$username,$password,$db_name,3306);
-	
-	 if($conn ->connect_error){
-		 die("Connection failed:.$connect_error");
-	 }
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname,3306);
 
-	 echo "Connection successful!";
-	 
-	 ?>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+    echo "connection successfull!";
+
+?>
