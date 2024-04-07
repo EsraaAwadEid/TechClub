@@ -29,7 +29,7 @@ include("connection.php");
         class="flex flex-col items-center justify-center min-h-screen p-4 space-y-4 antialiased text-gray-900 bg-gray-100 dark:bg-dark dark:text-light"
       >
         <!-- Brand -->
-        <a href="../../index.html">
+        <a href="../../register.php">
           <img class="w-20" src="../build/images/tap_logo.png " alt="">
           <svg class="w-48 h-6" id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1407.86 223.38">
             <defs>
@@ -83,11 +83,11 @@ include("connection.php");
         <main>
           <div class="w-full max-w-sm px-4 py-6 space-y-6 bg-white rounded-md dark:bg-darker">
             <h1 class="text-xl font-semibold text-center">Sign up</h1>
-            <form action="#" class="space-y-6">
+            <form name="form" action="signup.php" method="POST" class="space-y-6">
                 <input class="w-full px-4 py-2 border rounded-md dark:bg-darker dark:border-gray-700 focus:outline-none focus:ring focus:ring-primary-100 dark:focus:ring-primary-darker"
                        type="text"
                        id="user"
-                       name="username"
+                       name="user"
                        placeholder="Enter username"
                        required />
                 <input class="w-full px-4 py-2 border rounded-md dark:bg-darker dark:border-gray-700 focus:outline-none focus:ring focus:ring-primary-100 dark:focus:ring-primary-darker"
